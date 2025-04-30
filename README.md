@@ -6,6 +6,9 @@
 소프트웨어팀이 우리의 코드를 라이브러리처럼 import 해서 호출 하고 
 
 ex) from display_emotion import show_expression
+
 emotion_result = "happy" #GPT 결과값 넣기
+
 show_expression(emotion_result)
+
 -> 이렇게 하면 된다네...?
