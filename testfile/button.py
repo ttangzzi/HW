@@ -4,7 +4,7 @@ from evdev import InputDevice, ecodes
 import select
 import sys
 
-# YOITCH Snapshot 버튼 디바이스 경로
+# YOITCH Snapshot 버튼 디바이스 경로 ㅁ
 DEVICE_PATH = "/dev/input/event3"
 
 # 장치 열기
