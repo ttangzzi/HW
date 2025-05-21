@@ -44,7 +44,9 @@ while True:
             # 대소문자 상관없이 p 키 감지 -> 재생
             if key.lower() == 'p':
                 print("파일 재생 중...")
-                subprocess.run(["aplay", "out.wav"])
+                # plughw : 장치 번호 만약에 바뀌면 수정해줘야함
+                subprocess.run(["aplay", "-D", "plughw:1,0", "out.wav"])
+
 
         # dev는 evdev를 통해 연 입력장치 (블루투스) 의미
         # Snapshot 버튼 이벤트 처리
@@ -69,6 +71,7 @@ while True:
                     print("녹음 시작")
                     try:
                         recording = subprocess.Popen([
+                            # plughw : 장치 번호 만약에 바뀌면 수정해줘야함
                             "arecord", "-D", "plughw:1,0", "-f", "S16_LE", "-r", "16000", "-c", "1", "out.wav"
                         ])
                     except Exception as e:
